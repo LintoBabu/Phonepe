@@ -70,24 +70,10 @@ class _loginPageState extends State<loginPage> {
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.zero,
                       borderSide: BorderSide(color: Colors.purple, width: 1)),
-                  prefixIcon: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15,vertical: 6),
-                    margin: EdgeInsets.symmetric(horizontal: 6),
-                    child: Row(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(33, 24, 43, 60)
-                          ),
-                          child: Text("+91 - ",style: TextStyle(color: Colors.white,fontSize: 20),),
-                        )
-                      ],
-                    ),
-                  )
                 ),
               ),
               SizedBox(
-                height: 400,
+                height: 200,
               ),
               Container(
                 child: FittedBox(

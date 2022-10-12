@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:phonepenew/loginPage.dart';
+
+import 'pages/loginPage.dart';
 
 void main(){
   runApp(const phonepe());

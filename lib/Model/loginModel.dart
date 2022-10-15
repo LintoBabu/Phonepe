@@ -1,5 +1,5 @@
 class loginModel {
-  String? status;
+  bool? status;
   String? message;
   Data? data;
 
@@ -23,19 +23,19 @@ class loginModel {
 }
 
 class Data {
-  String? userName;
+  String? username;
   int? accountBalance;
 
-  Data({this.userName, this.accountBalance});
+  Data({this.username, this.accountBalance});
 
   Data.fromJson(Map<String, dynamic> json) {
-    userName = json['user name'];
+    username = json['username'];
     accountBalance = json['accountBalance'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['user name'] = this.userName;
+    data['username'] = this.username;
     data['accountBalance'] = this.accountBalance;
     return data;
   }

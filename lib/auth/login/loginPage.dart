@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:phonepenew/Model/homepage.dart';
+import 'package:phonepenew/Model/loginModel.dart';
 import 'package:phonepenew/auth/login/loginRepo.dart';
 import 'package:phonepenew/auth/login/login_cubit.dart';
 
@@ -124,6 +126,8 @@ class _loginPageState extends State<loginPage> {
                               } else if (state is LoginLoading) {
                               }
                                 else if (state is LoginSuccess){
+                                  loginModel? objloginModel = state.objlogin;
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>homepage(loginModeler: objloginModel,)));
                               }
                               else if (state is LoginFail) {
                               } else {}

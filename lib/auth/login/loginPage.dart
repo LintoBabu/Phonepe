@@ -88,7 +88,7 @@ class _loginPageState extends State<loginPage> {
                 keyboardType: TextInputType.number,
                 cursorColor: Colors.purple,
                 decoration: InputDecoration(
-                  prefixText: "+91 |",
+                  prefixText: "+91 | ",
                   hintText: "Enter Your Mobile Number",
                   hintStyle: TextStyle(color: Colors.white),
                   focusedBorder: OutlineInputBorder(

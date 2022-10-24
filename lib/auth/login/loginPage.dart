@@ -4,6 +4,7 @@ import 'package:phonepenew/Model/homepage.dart';
 import 'package:phonepenew/Model/loginModel.dart';
 import 'package:phonepenew/auth/login/loginRepo.dart';
 import 'package:phonepenew/auth/login/login_cubit.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class loginPage extends StatefulWidget {
   const loginPage({Key? key}) : super(key: key);
@@ -14,6 +15,18 @@ class loginPage extends StatefulWidget {
 
 class _loginPageState extends State<loginPage> {
   late LoginCubit objloginCubit;
+   TextEditingController numbercont = TextEditingController();
+   TextEditingController password = TextEditingController();
+  // This function is used to save the sharedPreference data
+
+
+  void userdatasaving(String username,String password)async{
+    SharedPreferences object = await SharedPreferences.getInstance();
+    object.setString("password", password);
+    object.setString("username", username);
+
+
+  }
 
   @override
   void initState() {
@@ -70,10 +83,12 @@ class _loginPageState extends State<loginPage> {
               ),
               SizedBox(height: 20),
               TextField(
+                controller: numbercont,
                 style: TextStyle(color: Colors.white),
                 keyboardType: TextInputType.number,
                 cursorColor: Colors.purple,
                 decoration: InputDecoration(
+                  prefixText: "+91 |",
                   hintText: "Enter Your Mobile Number",
                   hintStyle: TextStyle(color: Colors.white),
                   focusedBorder: OutlineInputBorder(
@@ -111,6 +126,8 @@ class _loginPageState extends State<loginPage> {
                   GestureDetector(
                     onTap: (){
                       objloginCubit.login();
+                      userdatasaving(numbercont.text,"abcd");
+
                     },
                     child: Container(
                         height: 55,
